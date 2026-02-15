@@ -8,18 +8,26 @@
 </head>
 <body>
   <nav>
-    <a href="#" class="active">HOME</a>
+    <a href="#home" class="active">HOME</a>
     <a href="#tools">TOOLS</a>
     <a href="#experience">EXPERIENCE</a>
     <a href="#projects">PROJECTS</a>
     <a href="#contact">CONTACT</a>
   </nav>
-  <section class="hero">
-    <div class="content">
-      <h1>Hi, I'm Tyler Bouldin</h1>
-      <p class="about">
-        I am a sophomore at the University of South Carolina majoring in Computer Information Systems with a 4.0 in Major GPA. By combining a Business Information Management minor with an Artificial Intelligence concentration, I bridge the gap between technical architecture and strategic business goals. I am passionate about building efficient, scalable systems and solving real-world problems through a technical stack that includes Java, Python, and Node.js and more. My current focus involves the development of generative and agentic AI integrations, where I apply both technical precision and strategic thinking to create high-impact solutions. I thrive in environments that require both technical precision and strategic thinking. I look forward to expanding my knowledge while also making a positive impact on teams and communities around me as I pursue new opportunities.
-      </p>
+
+  <section id="home" class="hero full-screen-section">
+    <div class="hero-main">
+      <div class="content">
+        <h1>Hi, I'm Tyler Bouldin</h1>
+        <p class="about">
+          I am a sophomore at the University of South Carolina majoring in Computer Information Systems with a 4.0 in Major GPA. By combining a Business Information Management minor with an Artificial Intelligence concentration, I bridge the gap between technical architecture and strategic business goals. I am passionate about building efficient, scalable systems and solving real-world problems through a technical stack that includes Java, Python, and Node.js and more. My current focus involves the development of generative and agentic AI integrations, where I apply both technical precision and strategic thinking to create high-impact solutions. I thrive in environments that require both technical precision and strategic thinking. I look forward to expanding my knowledge while also making a positive impact on teams and communities around me as I pursue new opportunities.
+        </p>
+      </div>
+      <div class="photo-wrap">
+        <img src="images/HeadShot.png" alt="Tyler Bouldin" />
+      </div>
+    </div>
+    <div class="hero-footer">
       <div class="contact-row">
         <a href="mailto:tylerbouldin16@gmail.com">
           <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
@@ -29,8 +37,11 @@
           <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
           +1 (703) 708-4876
         </a>
+        <span class="contact-item">
+          <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          Aldie, VA
+        </span>
       </div>
-
       <div class="actions">
         <a href="https://www.linkedin.com/in/tylerbouldin16" target="_blank" rel="noopener noreferrer" class="btn">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -40,17 +51,264 @@
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
           GitHub
         </a>
-
         <a href="Files/Tyler%20Bouldin%20Official%20Resume%20%281%29.pdf" download class="btn btn-primary">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
           Download Resume
         </a>
       </div>
     </div>
+  </section>
 
-    <div class="photo-wrap">
-      <img src="images/HeadShot.png" alt="Tyler Bouldin" />
+  <section id="tools" class="page-section full-screen-section">
+    <h2 class="section-title">Tools</h2>
+
+    <div class="tools-category">
+      <h3 class="tools-category-title">Languages &amp; Stack</h3>
+      <div class="tools-carousel-wrapper">
+        <div class="tools-carousel">
+          <div class="tools-carousel-set">
+            <div class="tool-item">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/java.svg" alt="" class="tool-icon" />
+              <span class="tool-name">Java</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/python/3776AB" alt="" class="tool-icon" />
+              <span class="tool-name">Python</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="" class="tool-icon" />
+              <span class="tool-name">JavaScript</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/react/61DAFB" alt="" class="tool-icon" />
+              <span class="tool-name">React</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="" class="tool-icon" />
+              <span class="tool-name">Node.js</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/express/000000" alt="" class="tool-icon" />
+              <span class="tool-name">Express.js</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/html5/E34F26" alt="" class="tool-icon" />
+              <span class="tool-name">HTML5</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/css3/1572B6" alt="" class="tool-icon" />
+              <span class="tool-name">CSS3</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/cplusplus/00599C" alt="" class="tool-icon" />
+              <span class="tool-name">C++</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/mongodb/47A248" alt="" class="tool-icon" />
+              <span class="tool-name">MongoDB</span>
+            </div>
+            <div class="tool-item">
+              <span class="tool-icon-fallback" aria-hidden="true">M</span>
+              <span class="tool-name">Mongoose</span>
+            </div>
+            <div class="tool-item">
+              <span class="tool-icon-fallback" aria-hidden="true">NoSQL</span>
+              <span class="tool-name">NoSQL</span>
+            </div>
+          </div>
+          <div class="tools-carousel-set">
+            <div class="tool-item">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/java.svg" alt="" class="tool-icon" />
+              <span class="tool-name">Java</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/python/3776AB" alt="" class="tool-icon" />
+              <span class="tool-name">Python</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="" class="tool-icon" />
+              <span class="tool-name">JavaScript</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/react/61DAFB" alt="" class="tool-icon" />
+              <span class="tool-name">React</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="" class="tool-icon" />
+              <span class="tool-name">Node.js</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/express/000000" alt="" class="tool-icon" />
+              <span class="tool-name">Express.js</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/html5/E34F26" alt="" class="tool-icon" />
+              <span class="tool-name">HTML5</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/css3/1572B6" alt="" class="tool-icon" />
+              <span class="tool-name">CSS3</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/cplusplus/00599C" alt="" class="tool-icon" />
+              <span class="tool-name">C++</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/mongodb/47A248" alt="" class="tool-icon" />
+              <span class="tool-name">MongoDB</span>
+            </div>
+            <div class="tool-item">
+              <span class="tool-icon-fallback" aria-hidden="true">M</span>
+              <span class="tool-name">Mongoose</span>
+            </div>
+            <div class="tool-item">
+              <span class="tool-icon-fallback" aria-hidden="true">NoSQL</span>
+              <span class="tool-name">NoSQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tools-category">
+      <h3 class="tools-category-title">Tools &amp; Platforms</h3>
+      <div class="tools-carousel-wrapper">
+        <div class="tools-carousel">
+          <div class="tools-carousel-set">
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/github/181717" alt="" class="tool-icon" />
+              <span class="tool-name">GitHub</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/visualstudiocode/007ACC" alt="" class="tool-icon" />
+              <span class="tool-name">VS Code</span>
+            </div>
+            <div class="tool-item">
+              <span class="tool-icon-fallback" aria-hidden="true">Cursor</span>
+              <span class="tool-name">Cursor AI</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/git/F05032" alt="" class="tool-icon" />
+              <span class="tool-name">git</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/npm/CB3837" alt="" class="tool-icon" />
+              <span class="tool-name">npm</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/vercel/000000" alt="" class="tool-icon" />
+              <span class="tool-name">Vercel</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/render/46E3B7" alt="" class="tool-icon" />
+              <span class="tool-name">Render</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/openai/412991" alt="" class="tool-icon" />
+              <span class="tool-name">OpenAI</span>
+            </div>
+            <div class="tool-item">
+              <span class="tool-icon-fallback" aria-hidden="true">Claude</span>
+              <span class="tool-name">Claude</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/eclipse/2C2255" alt="" class="tool-icon" />
+              <span class="tool-name">Eclipse</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/linux/FCC624" alt="" class="tool-icon" />
+              <span class="tool-name">Unix & Linux</span>
+            </div>
+            <div class="tool-item">
+              <span class="tool-icon-fallback" aria-hidden="true">R</span>
+              <span class="tool-name">Responsive Design</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/microsoftoffice.svg" alt="" class="tool-icon" />
+              <span class="tool-name">Microsoft Office</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/canva/00C4CC" alt="" class="tool-icon" />
+              <span class="tool-name">Canva</span>
+            </div>
+          </div>
+          <div class="tools-carousel-set">
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/github/181717" alt="" class="tool-icon" />
+              <span class="tool-name">GitHub</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/visualstudiocode/007ACC" alt="" class="tool-icon" />
+              <span class="tool-name">VS Code</span>
+            </div>
+            <div class="tool-item">
+              <span class="tool-icon-fallback" aria-hidden="true">Cursor</span>
+              <span class="tool-name">Cursor AI</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/git/F05032" alt="" class="tool-icon" />
+              <span class="tool-name">git</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/npm/CB3837" alt="" class="tool-icon" />
+              <span class="tool-name">npm</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/vercel/000000" alt="" class="tool-icon" />
+              <span class="tool-name">Vercel</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/render/46E3B7" alt="" class="tool-icon" />
+              <span class="tool-name">Render</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/openai/412991" alt="" class="tool-icon" />
+              <span class="tool-name">OpenAI</span>
+            </div>
+            <div class="tool-item">
+              <span class="tool-icon-fallback" aria-hidden="true">Claude</span>
+              <span class="tool-name">Claude</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/eclipse/2C2255" alt="" class="tool-icon" />
+              <span class="tool-name">Eclipse</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/linux/FCC624" alt="" class="tool-icon" />
+              <span class="tool-name">Unix & Linux</span>
+            </div>
+            <div class="tool-item">
+              <span class="tool-icon-fallback" aria-hidden="true">R</span>
+              <span class="tool-name">Responsive Design</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/microsoftoffice.svg" alt="" class="tool-icon" />
+              <span class="tool-name">Microsoft Office</span>
+            </div>
+            <div class="tool-item">
+              <img src="https://cdn.simpleicons.org/canva/00C4CC" alt="" class="tool-icon" />
+              <span class="tool-name">Canva</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
+
+  <section id="experience" class="page-section full-screen-section">
+    <h2 class="section-title">Experience</h2>
+    <p class="section-placeholder">Content coming soon.</p>
+  </section>
+
+  <section id="projects" class="page-section full-screen-section">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-placeholder">Content coming soon.</p>
+  </section>
+
+  <section id="contact" class="page-section full-screen-section">
+    <h2 class="section-title">Contact</h2>
+    <p class="section-placeholder">Content coming soon.</p>
+  </section>
+
 </body>
 </html>

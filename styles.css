@@ -1,37 +1,37 @@
-/* ============================================
-   Tyler Bouldin – Portfolio styles
-   ============================================ */
-
-/*
-  RESET: The * selector means "every element."
-  We zero out margin and padding so we're not fighting browser default spacing.
-  box-sizing: border-box means width/height include padding and border (easier to lay out).
-*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/*
-  BODY: Base styles for the whole page.
-  min-height: 100vh = at least full viewport height (vh = viewport height, 100 = 100%).
-  #0a0a0a is a near-black hex color; #fff is white.
-*/
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100vh;
   background: #0a0a0a;
   color: #fff;
   font-family: system-ui, -apple-system, sans-serif;
+  padding-top: 56px;
 }
 
-/* ========== TOP NAV ========== */
+.full-screen-section {
+  min-height: 100vh;
+}
+
 nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
   padding: 1rem 2rem;
-  display: flex;           /* Flexbox: puts items in a row and lets us align them. */
+  display: flex;
   justify-content: center;
-  gap: 1.5rem;             /* Space between nav links (no need for margin on each). */
-  flex-wrap: wrap;         /* On small screens, links can wrap to the next line. */
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  background: #0a0a0a;
 }
 
 nav a {
@@ -48,44 +48,60 @@ nav a.active {
 }
 
 nav a.active {
-  background: rgba(255, 255, 255, 0.1);  /* rgba = red, green, blue, alpha (0.1 = 10% opacity). */
+  background: rgba(255, 255, 255, 0.1);
   padding: 0.35rem 0.75rem;
   border-radius: 6px;
 }
 
-/*
-  HERO – TWO COLUMNS:
-  CSS Grid: grid-template-columns: 1fr 1fr = two equal columns (1fr = one fraction of available space).
-  margin: 0 auto = center the block horizontally when it has a max-width.
-  calc(100vh - 80px) = full viewport height minus roughly the nav, so the hero fills the rest.
-*/
 .hero {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
-  min-height: calc(100vh - 80px);
+  padding: 1.25rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: calc(100vh - 56px);
+  padding-top: 1.5rem;
 }
 
-/*
-  MEDIA QUERY = "when the screen is 768px wide or less, use these styles."
-  This is how we make the layout responsive: on phones we switch to one column and put the photo on top (order: -1).
-*/
 @media (max-width: 768px) {
-  .hero {
-    grid-template-columns: 1fr;   /* One column instead of two. */
+  .hero-main {
+    grid-template-columns: 1fr;
     text-align: center;
   }
 
-  .hero .photo-wrap {
-    order: -1;   /* In flex/grid, order controls order. -1 puts this before the content. */
+  .hero-main .photo-wrap {
+    order: -1;
   }
 }
 
-/* Content block: flex column = stack children vertically. gap = space between them. */
+.hero-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.25rem;
+  align-items: center;
+}
+
+.hero-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.hero-footer .contact-row {
+  gap: 2rem;
+  justify-content: center;
+}
+
+.hero-footer .actions {
+  gap: 1rem;
+  justify-content: center;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -99,11 +115,10 @@ nav a.active {
 
 .content .about {
   color: #b0b0b0;
-  line-height: 1.65;   /* Makes text easier to read (space between lines). */
-  font-size: 0.95rem; /* rem = relative to root font size; easier to scale the whole site later. */
+  line-height: 1.65;
+  font-size: 0.95rem;
 }
 
-/* Contact row: email and phone links with icons. */
 .contact-row {
   display: flex;
   flex-wrap: wrap;
@@ -111,65 +126,66 @@ nav a.active {
   align-items: center;
 }
 
-.contact-row a {
+.contact-row a,
+.contact-row .contact-item {
   color: #ccc;
   text-decoration: none;
   font-size: 0.9rem;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+  transition: color 0.2s;
 }
 
 .contact-row a:hover {
-  color: #fff;   /* :hover = when the user's cursor is over the link. */
+  color: #fff;
+}
+
+.contact-row .contact-item {
+  cursor: default;
 }
 
 .contact-row .icon {
   width: 18px;
   height: 18px;
-  opacity: 0.8;   /* Slightly transparent so it doesn't overpower the text. */
+  opacity: 0.8;
 }
 
-/* ========== ACTION BUTTONS ========== */
 .actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
 }
 
-/*
-  .btn = base style for all buttons. .btn-primary below overrides background/border for the blue "Download Resume" button.
-  transition = smooth change on hover (0.2s for background and border-color).
-*/
 .btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.6rem 1rem;
   border-radius: 8px;
-  text-decoration: none;   /* Removes underline from the link. */
+  text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.06);
-  color: #fff;
-  transition: background 0.2s, border-color 0.2s;
+  border: 1px solid rgba(251, 146, 60, 0.35);
+  background: transparent;
+  color: #ccc;
+  transition: color 0.2s, border-color 0.2s;
 }
 
 .btn:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  border-color: rgba(251, 146, 60, 0.6);
 }
 
-/* Primary button (Download Resume): blue so it stands out as the main action. */
 .btn-primary {
-  background: #2563eb;
-  border-color: #2563eb;
+  border: 1px solid rgba(251, 146, 60, 0.35);
+  background: transparent;
+  color: #ccc;
 }
 
 .btn-primary:hover {
-  background: #3b82f6;
-  border-color: #3b82f6;
+  color: #fff;
+  border-color: rgba(251, 146, 60, 0.6);
 }
 
 .btn svg {
@@ -177,11 +193,6 @@ nav a.active {
   height: 18px;
 }
 
-/*
-  PHOTO: Wrapper centers the image. The img itself is made circular and given an orange ring.
-  aspect-ratio: 1 = square. object-fit: cover = fill the circle without stretching (may crop).
-  border-radius: 50% = makes a circle. box-shadow = soft glow behind the image.
-*/
 .photo-wrap {
   display: flex;
   justify-content: center;
@@ -190,10 +201,150 @@ nav a.active {
 
 .photo-wrap img {
   width: 100%;
-  max-width: 320px;       /* Won't get bigger than 320px so it doesn't dominate on large screens. */
+  max-width: 320px;
   aspect-ratio: 1;
   object-fit: cover;
   border-radius: 50%;
-  border: 3px solid rgba(251, 146, 60, 0.6);   /* Orange/amber ring. */
+  border: 3px solid rgba(251, 146, 60, 0.6);
   box-shadow: 0 0 30px rgba(251, 146, 60, 0.15);
+}
+
+.page-section {
+  min-height: 100vh;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+#tools .section-title {
+  margin-bottom: 1.5rem;
+}
+
+.page-section h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.section-placeholder {
+  color: #888;
+  font-size: 1rem;
+}
+
+#tools.page-section {
+  padding-bottom: 2rem;
+}
+
+.tools-category {
+  margin-bottom: 2.5rem;
+}
+
+.tools-category:last-child {
+  margin-bottom: 0;
+}
+
+.tools-category-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin-bottom: 1rem;
+}
+
+.tools-carousel-wrapper {
+  margin-top: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.tools-carousel {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  width: max-content;
+  animation: tools-marquee 40s linear infinite;
+  align-items: center;
+}
+
+.tools-carousel-set {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  flex-shrink: 0;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.tools-carousel-set .tool-item:last-child {
+  margin-right: 1rem;
+}
+
+@keyframes tools-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.tool-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 0.75rem;
+  min-width: 92px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.tool-item:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.tool-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.tool-icon-fallback {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  text-align: center;
+  line-height: 1.2;
+  padding: 0 4px;
+}
+
+.tool-name {
+  font-size: 0.8rem;
+  color: #ccc;
+  text-align: center;
+  line-height: 1.2;
 }

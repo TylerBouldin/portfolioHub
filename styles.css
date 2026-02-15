@@ -1,0 +1,199 @@
+/* ============================================
+   Tyler Bouldin – Portfolio styles
+   ============================================ */
+
+/*
+  RESET: The * selector means "every element."
+  We zero out margin and padding so we're not fighting browser default spacing.
+  box-sizing: border-box means width/height include padding and border (easier to lay out).
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+  BODY: Base styles for the whole page.
+  min-height: 100vh = at least full viewport height (vh = viewport height, 100 = 100%).
+  #0a0a0a is a near-black hex color; #fff is white.
+*/
+body {
+  min-height: 100vh;
+  background: #0a0a0a;
+  color: #fff;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* ========== TOP NAV ========== */
+nav {
+  padding: 1rem 2rem;
+  display: flex;           /* Flexbox: puts items in a row and lets us align them. */
+  justify-content: center;
+  gap: 1.5rem;             /* Space between nav links (no need for margin on each). */
+  flex-wrap: wrap;         /* On small screens, links can wrap to the next line. */
+}
+
+nav a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+nav a:hover,
+nav a.active {
+  color: #fff;
+}
+
+nav a.active {
+  background: rgba(255, 255, 255, 0.1);  /* rgba = red, green, blue, alpha (0.1 = 10% opacity). */
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+}
+
+/*
+  HERO – TWO COLUMNS:
+  CSS Grid: grid-template-columns: 1fr 1fr = two equal columns (1fr = one fraction of available space).
+  margin: 0 auto = center the block horizontally when it has a max-width.
+  calc(100vh - 80px) = full viewport height minus roughly the nav, so the hero fills the rest.
+*/
+.hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+}
+
+/*
+  MEDIA QUERY = "when the screen is 768px wide or less, use these styles."
+  This is how we make the layout responsive: on phones we switch to one column and put the photo on top (order: -1).
+*/
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;   /* One column instead of two. */
+    text-align: center;
+  }
+
+  .hero .photo-wrap {
+    order: -1;   /* In flex/grid, order controls order. -1 puts this before the content. */
+  }
+}
+
+/* Content block: flex column = stack children vertically. gap = space between them. */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.content h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+.content .about {
+  color: #b0b0b0;
+  line-height: 1.65;   /* Makes text easier to read (space between lines). */
+  font-size: 0.95rem; /* rem = relative to root font size; easier to scale the whole site later. */
+}
+
+/* Contact row: email and phone links with icons. */
+.contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.contact-row a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.contact-row a:hover {
+  color: #fff;   /* :hover = when the user's cursor is over the link. */
+}
+
+.contact-row .icon {
+  width: 18px;
+  height: 18px;
+  opacity: 0.8;   /* Slightly transparent so it doesn't overpower the text. */
+}
+
+/* ========== ACTION BUTTONS ========== */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/*
+  .btn = base style for all buttons. .btn-primary below overrides background/border for the blue "Download Resume" button.
+  transition = smooth change on hover (0.2s for background and border-color).
+*/
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;   /* Removes underline from the link. */
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Primary button (Download Resume): blue so it stands out as the main action. */
+.btn-primary {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+.btn-primary:hover {
+  background: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/*
+  PHOTO: Wrapper centers the image. The img itself is made circular and given an orange ring.
+  aspect-ratio: 1 = square. object-fit: cover = fill the circle without stretching (may crop).
+  border-radius: 50% = makes a circle. box-shadow = soft glow behind the image.
+*/
+.photo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-wrap img {
+  width: 100%;
+  max-width: 320px;       /* Won't get bigger than 320px so it doesn't dominate on large screens. */
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(251, 146, 60, 0.6);   /* Orange/amber ring. */
+  box-shadow: 0 0 30px rgba(251, 146, 60, 0.15);
+}

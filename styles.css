@@ -888,24 +888,50 @@ nav a.active {
   }
 
   .hero {
-    padding: 1rem 1.25rem 1.5rem;
+    padding: 1rem 0 1.5rem;
+    max-width: 100%;
   }
 
   .hero-main {
-    gap: 1.5rem;
+    gap: 1.25rem;
+    width: 100%;
   }
 
-  .content h1 {
+  .hero-title {
+    width: 100%;
     font-size: 1.75rem;
+    text-align: center;
+    padding: 0 1rem;
+    box-sizing: border-box;
   }
 
-  .content .about {
+  .hero-about {
+    width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  .hero-about .about {
     font-size: 0.9rem;
     line-height: 1.6;
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+  }
+
+  .photo-wrap {
+    width: 100%;
+    padding: 0;
   }
 
   .photo-wrap img {
-    max-width: 220px;
+    width: 90vw;
+    max-width: 320px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
   }
 
   .hero-footer {

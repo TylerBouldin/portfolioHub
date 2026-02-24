@@ -763,19 +763,21 @@ nav a.active {
 }
 
 .contact-submit {
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-  border: none;
+  background: #0a0a0a;
+  border: 2px solid #fb923c;
   border-radius: 8px;
   padding: 0.9rem 1.5rem;
-  color: #fff;
+  color: #fb923c;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
 
 .contact-submit:hover {
-  opacity: 0.9;
+  background: rgba(251, 146, 60, 0.15);
+  border-color: #f97316;
+  color: #f97316;
 }
 
 .form-toast {
